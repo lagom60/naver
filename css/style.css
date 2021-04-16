@@ -32,7 +32,7 @@ body{
   height: auto;
 }
 /* 로그인 폼 */
-.login-form :focus{
+:focus{
   outline: 0;
 }
 .login-form fieldset{
@@ -78,8 +78,8 @@ body{
   order: 1;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-top: 10px;
-  background-color: pink;
 }
 .btn-login{
   margin-top: 10px;
@@ -88,4 +88,49 @@ body{
   font-weight: 700;
   border: 0;
   padding: 16px 0;
+}
+.login-state{
+  position: relative;
+}
+.login-state label{
+  display: flex;
+  align-items: center;
+}
+.login-state .icon-check{
+  width: 24px;
+  height: 24px;
+  background-image: url(./../images/icon-unchecked.svg);
+  background-size: cover;
+  margin-right: 5px;
+  cursor: pointer;
+}
+[name="state"]{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  opacity: 0;
+  cursor: pointer;
+}
+/* [name="state"]:focus{
+  box-shadow: 0 0 0 4px blue;
+  border-radius: 2px;
+} */
+[name="state"]:checked + label .icon-check{
+  background-image: url(./../images/icon-checked.svg);
+}
+.login-ip label::after{
+  cursor: pointer;
+  display: inline-block;
+  width: 36px;
+  text-align: right;
+  content: "OFF";
+  color: #03CF5D;
+}
+[name="ip"]:checked + label::after{
+  content: "ON";
+}
+[name="ip"]{
+  display: none;
 }
