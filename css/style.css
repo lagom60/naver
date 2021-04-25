@@ -1,17 +1,17 @@
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
 /* 숨김 콘텐츠 */
-.a11y{
+.a11y {
   position: absolute;
   width: 1px;
   height: 1px;
   margin: -1px;
   overflow: hidden;
   visibility: hidden;
-  clip: rect(0,0,0,0);
+  clip: rect(0, 0, 0, 0);
   clip-path: polygon(0 0, 0 0, 0 0);
 }
 /* 본문 기본 스타일 */
-body{
+body {
   font-family: 'Spoqa Han Sans';
   font-weight: 400;
   background-color: #fff;
@@ -19,23 +19,20 @@ body{
   margin: 0;
 }
 /* 네이버 로고 */
-.logo{
+.logo {
   width: 230px;
   height: 44px;
   margin: 100px auto 50px;
 }
-.logo a{
+.logo a {
   display: block;
 }
-.logo img{
+.logo img {
   max-width: 100%;
   height: auto;
 }
 /* 로그인 폼 */
-:focus{
-  outline: 0;
-}
-.login-form fieldset{
+.login-form fieldset {
   border: 0;
   margin: 0;
   padding: 0;
@@ -43,20 +40,20 @@ body{
   margin-left: auto;
   margin-right: auto;
 }
-.container{
+.container {
   display: flex;
   flex-flow: row wrap;
 }
-.user-email, 
+.user-email,
 .user-password,
 .ip-state-wrapper,
-.btn-login{
+.btn-login {
   width: 100%;
 }
 .user-email,
-.user-password{
-  background: #FFFFFF;
-  border: 1px solid #DADADA;
+.user-password {
+  background: #ffffff;
+  border: 1px solid #dadada;
   box-sizing: border-box;
   height: 48px;
   display: flex;
@@ -64,39 +61,40 @@ body{
   margin-bottom: 10px;
 }
 .user-email:focus-within,
-.user-password:focus-within{
-  border-color: #03CF5D;
+.user-password:focus-within {
+  border-color: #03cf5d;
 }
 [name="userEmail"],
-[name="userPassword"]{
+[name="userPassword"] {
   box-sizing: border-box;
   width: 100%;
   border: 0;
   padding: 5px 10px 5px 20px;
 }
-.ip-state-wrapper{
+
+.ip-state-wrapper {
   order: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 10px;
 }
-.btn-login{
+.btn-login {
   margin-top: 10px;
-  background-color: #03CF5D;
+  background-color: #03cf5d;
   color: #fff;
   font-weight: 700;
   border: 0;
   padding: 16px 0;
 }
-.login-state{
+.login-state {
   position: relative;
 }
-.login-state label{
+.login-state label {
   display: flex;
   align-items: center;
 }
-.login-state .icon-check{
+.login-state .icon-check {
   width: 24px;
   height: 24px;
   background-image: url(./../images/icon-unchecked.svg);
@@ -104,33 +102,43 @@ body{
   margin-right: 5px;
   cursor: pointer;
 }
-[name="state"]{
+[name="state"],
+[name="ip"] {
   position: absolute;
   left: 0;
   top: 0;
-  width: 16px;
-  height: 16px;
+  width: 24px;
+  height: 24px;
   opacity: 0;
   cursor: pointer;
+  background: transparent;
+  padding: 0;
+  z-index: 100;
 }
-/* [name="state"]:focus{
-  box-shadow: 0 0 0 4px blue;
-  border-radius: 2px;
-} */
-[name="state"]:checked + label .icon-check{
+
+[name="state"]:checked + label .icon-check {
   background-image: url(./../images/icon-checked.svg);
 }
-.login-ip label::after{
+[name="ip"] + label::after {
   cursor: pointer;
   display: inline-block;
-  width: 36px;
+  width: 30px;
+  margin-left: 5px;
   text-align: right;
   content: "OFF";
-  color: #03CF5D;
+  color: #767676;
 }
-[name="ip"]:checked + label::after{
+[name="ip"]:checked + label::after {
   content: "ON";
+  color: #03cf5d;
 }
-[name="ip"]{
-  display: none;
+/* 로그인 폼 포커스 스타일 */
+:focus {
+  outline: 0;
+}
+.btn-login:focus-visible,
+[name="state"]:focus-visible + label span,
+[name="ip"]:focus-visible + label::after {
+  border-radius: 2px;
+  box-shadow: 0 0 0 2px #24388d;
 }
