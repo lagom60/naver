@@ -130,6 +130,7 @@ body {
 
 /* 로그인 상태유지 레이블 */
 .login-state-label {
+  cursor: pointer;
   display: flex;
   align-items: center;
 }
