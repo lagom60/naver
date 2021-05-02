@@ -12,6 +12,10 @@
   clip: rect(0, 0, 0, 0);
   clip-path: inset(50%);
 }
+/* 기본 글자크기 설정 */
+html {
+  font-size: 10px;
+}
 
 /* 본문 기본 스타일 */
 body {
@@ -20,13 +24,13 @@ body {
   background-color: #fff;
   color: #181818;
   margin: 0;
+  font-size: 1.6rem;
 }
 
 /* 네이버 로고 */
 .logo {
-  width: 230px;
-  height: 44px;
-  margin: 100px auto 50px;
+  width: 23rem;
+  margin: 10rem auto 5rem;
 }
 
 /* 네이버 로고 홈 링크 */
@@ -53,22 +57,22 @@ body {
   box-sizing: border-box;
   display: flex;
   flex-flow: column nowrap;
-  padding: 0 20px;
+  padding: 0 2rem;
 }
 
 /* 아이디 및 비밀번호 wrapper */
 .user-email,
 .user-password {
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 
 /* 아이디 및 비밀번호 입력 서식 (input) */
 .user-email-input,
 .user-password-input {
   box-sizing: border-box;
-  font-size: 14px;
+  font-size: 1.4rem;
   width: 100%;
-  padding: 15px 20px 13px;
+  padding: 1.5rem 2rem 1.3rem;
   border: 1px solid #dadada;
   background: #ffffff;
 }
@@ -84,9 +88,9 @@ body {
 /* 아이디 및 비밀번호 에러 메시지 */
 .error-message {
   display: none;
-  font-size: 12px;
-  padding-left: 21px;
-  margin-top: 5px;
+  font-size: 1.2rem;
+  padding-left: 2.1rem;
+  margin-top: 0.5rem;
   color: #ff1414;
 }
 
@@ -101,7 +105,7 @@ body {
   order: 1;
   display: flex;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 1rem;
 }
 
 /* 로그인 상태유지 wrapper */
@@ -115,8 +119,8 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-  width: 24px;
-  height: 24px;
+  width: 2.4rem;
+  height: 2.4rem;
   opacity: 0;
   cursor: pointer;
   background: transparent;
@@ -132,11 +136,11 @@ body {
 
 /* 로그인 상태유지 체크박스 레이블 기본 배경이미지 설정 */
 .login-state .icon-check {
-  width: 24px;
-  height: 24px;
+  width: 2.4rem;
+  height: 2.4rem;
   background-image: url(./../images/icon-unchecked.svg);
   background-size: cover;
-  margin-right: 5px;
+  margin-right: 0.5rem;
   cursor: pointer;
 }
 
@@ -156,7 +160,7 @@ body {
 .ip-security-checkbox + .ip-security-label::after {
   cursor: pointer;
   display: inline-block;
-  margin-left: 5px;
+  margin-left: 0.5rem;
   text-align: right;
   content: "OFF";
   color: #767676;
@@ -170,13 +174,13 @@ body {
 
 /* 로그인 버튼 */
 .btn-login {
-  margin-top: 10px;
+  margin-top: 1rem;
   background-color: #03cf5d;
   color: #fff;
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: 700;
   border: 0;
-  padding: 16px 0;
+  padding: 1.6rem 0;
 }
 
 /* 포커스 스타일 (커스텀) */
@@ -186,12 +190,14 @@ body {
   box-shadow: 0 0 0 2px #24388d;
 }
 
-/* 포커스 비저블 스타일 */
-.naver-home-link:focus-visible,
+/* 포커스 비저블 스타일 (공통) */
+:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+/* 로그인 상태유지 및 IP 보안 ON/OFF 체크박스 포커스 비저블 스타일 적용 */
 .login-state-checkbox:focus-visible + label span,
-.ip-security-checkbox:focus-visible + label::after,
-.ip-security-link:focus-visible,
-.btn-login:focus-visible {
+.ip-security-checkbox:focus-visible + label::after {
   border-radius: 2px;
   box-shadow: 0 0 0 2px #24388d;
 }
@@ -211,7 +217,7 @@ body {
 /* 데스크탑 (최소 768px아상) */
 @media screen and (min-width: 768px) {
   .login-form-container {
-    width: 500px;
+    width: 50rem;
     margin: 0 auto;
   }
 }
