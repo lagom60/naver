@@ -22,6 +22,7 @@
       <fieldset>
         <legend class="a11y">로그인 폼</legend>
         <div class="login-form-container">
+
           <div class="user-email">
             <label for="userEmail" class="a11y">아이디</label>
             <input
@@ -30,7 +31,11 @@
                    type="email"
                    id="userEmail"
                    placeholder="아이디(이메일)"
-                   required="required" />
+                   required="required"
+                   aria-invalid="false"
+                   aria-describedby="userEmailError"
+                   aria-live="assertive" />
+            <span class="error-message" id="userEmailError">아이디는 이메일 형식으로 입력해 주세요.</span>
           </div>
           <div class="user-password">
             <label for="userPassword" class="a11y">비밀번호</label>
@@ -40,7 +45,11 @@
                    type="password"
                    id="userPassword"
                    placeholder="비밀번호"
-                   required="required" />
+                   required="required"
+                   aria-invalid="false"
+                   aria-describedby="userPasswordError"
+                   aria-live="assertive" />
+            <span class="error-message" id="userPasswordError">비밀번호는 10자리 이상 입력해 주세요.</span>
           </div>
           <div class="login-state-ip-security-checkbox-wrapper">
             <div class="login-state">
@@ -51,7 +60,7 @@
               </label>
             </div>
             <a href="./ip_security.html" class="ip-security-link" target="_blank" rel="noopperner noreferrer" title="IP 보안에 대해">IP 보안</a>
-            <div class="login-ip">
+            <div class="ip-security">
               <input class="ip-security-checkbox" name="ip" type="checkbox" id="loginIp" />
               <label for="loginIp" class="ip-security-label" aria-label="IP 보안"></label>
             </div>
@@ -60,6 +69,7 @@
         </div>
       </fieldset>
     </form>
+    <script src="./js/form_validation.js"></script>
   </body>
 
 </html>

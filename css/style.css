@@ -1,5 +1,6 @@
 /* 웹폰트 - Spoqa Han Sans */
 @import url(./fonts.css);
+
 /* 숨김 콘텐츠 */
 .a11y {
   position: absolute;
@@ -11,6 +12,7 @@
   clip: rect(0, 0, 0, 0);
   clip-path: inset(50%);
 }
+
 /* 본문 기본 스타일 */
 body {
   font-family: 'Spoqa Han Sans';
@@ -19,94 +21,95 @@ body {
   color: #181818;
   margin: 0;
 }
+
 /* 네이버 로고 */
 .logo {
   width: 230px;
   height: 44px;
   margin: 100px auto 50px;
 }
+
+/* 네이버 로고 홈 링크 */
 .naver-home-link {
   display: block;
 }
+
+/* 로고 이미지 (반응형) */
 .logo img {
   max-width: 100%;
   height: auto;
 }
+
 /* 로그인 폼 */
+/* 로그인 폼 fiedlset 요소 기본 스타일 제거 */
 .login-form fieldset {
   border: 0;
   margin: 0;
   padding: 0;
 }
+
+/* 로그인 폼 서식 container */
 .login-form-container {
   box-sizing: border-box;
-  width: 100%;
-  padding: 0 20px 50px;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column nowrap;
+  padding: 0 20px;
 }
-.user-email,
-.user-password,
-.login-state-ip-security-checkbox-wrapper,
-.btn-login {
-  width: 100%;
-}
+
+/* 아이디 및 비밀번호 wrapper */
 .user-email,
 .user-password {
-  background: #ffffff;
-  border: 1px solid #dadada;
-  box-sizing: border-box;
-  height: 48px;
-  display: flex;
-  align-items: center;
   margin-bottom: 10px;
 }
-.user-email:focus-within,
-.user-password:focus-within {
-  border-color: #03cf5d;
-}
+
+/* 아이디 및 비밀번호 입력 서식 (input) */
 .user-email-input,
 .user-password-input {
   box-sizing: border-box;
+  font-size: 14px;
   width: 100%;
-  border: 0;
-  padding: 5px 10px 5px 20px;
+  padding: 15px 20px 13px;
+  border: 1px solid #dadada;
+  background: #ffffff;
 }
+
+/* 아이디 및 비밀번호 입력 서식에 focus 시 */
 .user-email-input:focus,
 .user-password-input:focus {
   box-shadow: none;
+  border-color: #03cf5d;
+  background: #e9f0fd;
 }
+
+/* 아이디 및 비밀번호 에러 메시지 */
+.error-message {
+  display: none;
+  font-size: 12px;
+  padding-left: 21px;
+  margin-top: 5px;
+  color: #ff1414;
+}
+
+/* 아이디 및 비밀번호 입력 서식에 값이 유효하지 않을 때 */
+/* 로그인 버튼 클릭 시 입력 값을 검사하여 유효하지 않은 값일 경우 해당 요소 .is--invalid 추가 */
+.is--invalid + .error-message {
+  display: block;
+}
+
+/* 로그인 상태유지, IP 보안 링크, IP 보안 체크상자 wrapper */
 .login-state-ip-security-checkbox-wrapper {
   order: 1;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin-top: 10px;
 }
+
+/* 로그인 상태유지 wrapper */
 .login-state {
   position: relative;
 }
-.login-state-label {
-  display: flex;
-  align-items: center;
-}
-.login-state .icon-check {
-  width: 24px;
-  height: 24px;
-  background-image: url(./../images/icon-unchecked.svg);
-  background-size: cover;
-  margin-right: 5px;
-  cursor: pointer;
-}
-.login-state-checkbox:checked + .login-state-label .icon-check {
-  background-image: url(./../images/icon-checked.svg);
-}
 
-.ip-security-link {
-  color: inherit;
-  text-decoration: none;
-  margin-left: auto;
-}
+/* 로그인 상태유지 및 IP 보안 체크박스 (숨김) */
 .login-state-checkbox,
 .ip-security-checkbox {
   position: absolute;
@@ -121,6 +124,35 @@ body {
   z-index: 100;
 }
 
+/* 로그인 상태유지 레이블 */
+.login-state-label {
+  display: flex;
+  align-items: center;
+}
+
+/* 로그인 상태유지 체크박스 레이블 기본 배경이미지 설정 */
+.login-state .icon-check {
+  width: 24px;
+  height: 24px;
+  background-image: url(./../images/icon-unchecked.svg);
+  background-size: cover;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+/* 로그인 상태유지 체크박스 선택 시 레이블 내 배경이미지 변경 */
+.login-state-checkbox:checked + .login-state-label .icon-check {
+  background-image: url(./../images/icon-checked.svg);
+}
+
+/* IP 보안 링크 */
+.ip-security-link {
+  color: inherit;
+  text-decoration: none;
+  margin-left: auto;
+}
+
+/* IP 보안 체크박스 레이블 (가상요소) 콘텐츠 default */
 .ip-security-checkbox + .ip-security-label::after {
   cursor: pointer;
   display: inline-block;
@@ -129,26 +161,32 @@ body {
   content: "OFF";
   color: #767676;
 }
+
+/* IP 보안 체크박스 선택 시 레이블 (가상요소) 콘텐츠 변경 */
 .ip-security-checkbox:checked + .ip-security-label::after {
   content: "ON";
   color: #03cf5d;
 }
 
+/* 로그인 버튼 */
 .btn-login {
   margin-top: 10px;
   background-color: #03cf5d;
   color: #fff;
+  font-size: 16px;
   font-weight: 700;
   border: 0;
   padding: 16px 0;
 }
-/* 로그인 폼 포커스 스타일 */
+
+/* 포커스 스타일 (커스텀) */
 :focus {
   outline: 0;
   border-radius: 2px;
   box-shadow: 0 0 0 2px #24388d;
 }
 
+/* 포커스 비저블 스타일 */
 .naver-home-link:focus-visible,
 .login-state-checkbox:focus-visible + label span,
 .ip-security-checkbox:focus-visible + label::after,
@@ -158,9 +196,22 @@ body {
   box-shadow: 0 0 0 2px #24388d;
 }
 
+/* 미디어쿼리 */
+/* 모바일 (최대 767px까지) */
+@media screen and (max-width: 767px) {
+  .login-state-ip-security-checkbox-wrapper {
+    justify-content: flex-end;
+  }
+  .ip-security-link,
+  .ip-security {
+    display: none;
+  }
+}
+
+/* 데스크탑 (최소 768px아상) */
 @media screen and (min-width: 768px) {
   .login-form-container {
-    width: 460px;
+    width: 500px;
     margin: 0 auto;
   }
 }
