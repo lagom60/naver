@@ -10,8 +10,59 @@
   </head>
 
   <body>
+    <!-- <script src="./js/form_validation.js"></script> -->
 
-    <script src="./js/form_validation.js"></script>
+    <header class="header">
+      <div class="header_inner">
+        <a href="https://www.naver.com" class="logo">
+          <h1 class="blind">NAVER</h1>
+        </a>
+      </div>
+    </header>
+    <div id="container" class="container">
+      <!-- content -->
+      <div class="content">
+        <div class="login_wrap">
+          <form id="form_login">
+            <ul class="panel_wrap">
+              <li class="panel_item" style="display: block;">
+                <div class="panel_inner">
+                  <div class="id_pw_wrap">
+                    <div class="input_row" id="id_line">
+                      <span class="input_id">아이디</span>
+                    </div>
+                    <div class="id_pw_wrap">
+                      <div class="input_row" id="id_line">
+                        <span class="input_pw">비밀번호</span>
+                      </div>
+                      <div class="btn_login_wrap">
+                        <button type="submit" class="btn_login" id="log.login">
+                            <span class="btn_text">로그인</span>
+                        </button>
+                      </div>
+                  <div class="login_keep_wrap" id="login_keep_wrap">
+                    <div class="keep_check">
+                      <input type="checkbox" id="keep" name="nvlong" class="input_keep" value="off">
+                      <label for="keep" class="keep_text">
+                        로그인 상태 유지
+                      </label>
+                    </div>
+                    <div class="ip_check">
+                      <a href="">
+                        <span>IP 보안 OFF</span>
+                      </a>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
   </body>
 
 </html>
